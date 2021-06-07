@@ -32,4 +32,8 @@ export class ChamadoCreateComponent implements OnInit {
         }
      })    
   }
+
+  cancel(): void {
+    this.router.navigate(['chamados']);
+  }
 }

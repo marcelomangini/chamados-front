@@ -24,6 +24,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ChamadoDeleteComponent } from './components/views/chamado/chamado-delete/chamado-delete.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     NavComponent,
     HomeComponent,
     ChamadoReadComponent,
-    ChamadoCreateComponent
+    ChamadoCreateComponent,
+    ChamadoDeleteComponent
   ],
   imports: [
     BrowserModule,

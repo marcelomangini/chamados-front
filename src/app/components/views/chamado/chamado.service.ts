@@ -19,9 +19,19 @@ export class ChamadoService {
     return this.http.get<Chamado[]>(url)
   }
 
+  findById(id: String): Observable<Chamado> {
+    const url = `${this.baseUrl}/chamados/${id}`;
+    return this.http.get<Chamado>(url);
+  }
+
   create(chamado: Chamado): Observable<Chamado> {
     const url = `${this.baseUrl}/chamados`;
     return this.http.post<Chamado>(url,chamado);
+  }
+
+  delete(id: String):Observable<void> {
+    const url = `${this.baseUrl}/chamados/${id}`;
+    return this.http.delete<void>(url);
   }
 
   mensagem(str: String): void {
