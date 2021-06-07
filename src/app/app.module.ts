@@ -18,6 +18,12 @@ import {MatCardModule} from '@angular/material/card';
 import { ChamadoReadComponent } from './components/views/chamado/chamado-read/chamado-read.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
+import { ChamadoCreateComponent } from './components/views/chamado/chamado-create/chamado-create.component';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,8 @@ import {MatButtonModule} from '@angular/material/button';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ChamadoReadComponent
+    ChamadoReadComponent,
+    ChamadoCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +47,11 @@ import {MatButtonModule} from '@angular/material/button';
     MatTableModule,
     HttpClientModule,
     MatButtonModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
