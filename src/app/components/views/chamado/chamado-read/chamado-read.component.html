@@ -1,0 +1,53 @@
+<div class="content">
+  <div class="title">
+    <h1>Chamado</h1>
+  </div>
+  <div class="mat-elevation-z8 content-table">
+    <table class="table" mat-table [dataSource]='chamados'>
+      <!-- id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+      </ng-container>
+
+      <!-- titulo Column -->
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef>Título</th>
+        <td mat-cell *matCellDef="let row">{{ row.titulo }}</td>
+      </ng-container>
+
+      <!-- status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let row">{{ row.status }}</td>
+      </ng-container>
+
+      <!-- descricao Column -->
+      <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef>Descrição</th>
+        <td mat-cell *matCellDef="let row">{{ row.descricao }}</td>
+      </ng-container>
+
+      <!-- dataInclusao Column -->
+      <ng-container matColumnDef="dataInclusao">
+        <th mat-header-cell *matHeaderCellDef>Data Inclusão</th>
+        <td mat-cell *matCellDef="let row">{{ row.dataInclusao }}</td>
+      </ng-container>
+
+      <!-- dataConclusao Column -->
+      <ng-container matColumnDef="dataConclusao">
+        <th mat-header-cell *matHeaderCellDef>Data Conclusão</th>
+        <td mat-cell *matCellDef="let row">{{ row.dataConclusao }}</td>
+      </ng-container>
+
+      <!-- acoes Column -->
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let row"> </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
