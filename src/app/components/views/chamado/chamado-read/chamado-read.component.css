@@ -15,6 +15,28 @@
     font-weight: 500;
 }
 
+button {
+    margin-bottom: .8rem;
+}
+
 .table {
     width: 100%
 }
+
+.comentarios {
+    color: black
+}
+
+.edit {
+    color: rgb(0, 0, 255)   
+}
+
+.delete {
+    color: rgb(228, 56, 56);
+    margin-left: .5rem;   
+}
+
+.mat-header {
+    width: 5rem;
+}
+

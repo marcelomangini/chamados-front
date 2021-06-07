@@ -17,6 +17,7 @@ import { HomeComponent } from './components/views/home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import { ChamadoReadComponent } from './components/views/chamado/chamado-read/chamado-read.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatTableModule,
     HttpClientModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

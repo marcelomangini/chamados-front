@@ -11,7 +11,7 @@ export class ChamadoReadComponent implements OnInit {
 
   chamados: Chamado[] = [];
 
-  displayedColumns: string[] = ['id', 'titulo', 'status', 'descricao','dataInclusao','dataConclusao','acoes'];
+  displayedColumns: string[] = ['id', 'titulo', 'status', 'descricao','dataInclusao','dataConclusao','comentarios','acoes'];
 
   constructor(private service: ChamadoService) { }
 
