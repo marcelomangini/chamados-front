@@ -35,8 +35,7 @@ export class ChamadoService {
   }
   update(chamado: Chamado):Observable<void>{
     const url = `${this.baseUrl}/chamados/${chamado.id}`;
-    return this.http.put<void>(url,chamado)
-
+    return this.http.put<void>(url,chamado);
   }
 
   mensagem(str: String): void {

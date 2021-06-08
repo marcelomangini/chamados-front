@@ -26,6 +26,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ChamadoDeleteComponent } from './components/views/chamado/chamado-delete/chamado-delete.component';
 import { ChamadoUpdateComponent } from './components/views/chamado/chamado-update/chamado-update.component';
+import { ComentarioReadAllComponent } from './components/views/comentario/comentario-read-all/comentario-read-all.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ChamadoUpdateComponent } from './components/views/chamado/chamado-updat
     ChamadoReadComponent,
     ChamadoCreateComponent,
     ChamadoDeleteComponent,
-    ChamadoUpdateComponent
+    ChamadoUpdateComponent,
+    ComentarioReadAllComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,56 @@
+<div class="content">
+    <div class="title">
+      <h1>Comentários</h1>
+    </div>
+    <button class="mat-elevation-z8"  mat-stroked-button color="primary">Novo comentário</button>
+    <div class="mat-elevation-z8 content-table">
+      <table class="table" mat-table [dataSource]="comentarios">
+        <!-- id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+        </ng-container>
+  
+        <!-- titulo Column -->
+        <ng-container matColumnDef="comentario">
+          <th mat-header-cell *matHeaderCellDef>Comentário</th>
+          <td mat-cell *matCellDef="let row">{{ row.comentario }}</td>
+        </ng-container>
+  
+        <!-- dataInclusao Column -->
+        <ng-container matColumnDef="dataComentario">
+          <th mat-header-cell *matHeaderCellDef>Data Comentário</th>
+          <td mat-cell *matCellDef="let row">{{ row.dataComentario }}</td>
+        </ng-container>
+    
+        <!-- comentarios Column -->
+        <ng-container matColumnDef="comentarios">
+          <th mat-header-cell *matHeaderCellDef>Ler Comentário</th>
+          <td mat-cell *matCellDef="let row">
+          <a class="comentarios">
+            <i class="material-icons comentarios">
+              comment
+            </i>  
+          </a> 
+          </td>
+        </ng-container>      
+  
+        <!-- acoes Column -->
+        <ng-container matColumnDef="acoes">
+          <th mat-header-cell class="mat-header" *matHeaderCellDef>Ações</th>
+          <td mat-cell *matCellDef="let row">
+            <a class="edit" href="#">
+              <i class="material-icons">edit</i>
+            </a>
+            <a class="delete" href="#">
+              <i class="material-icons">delete</i>
+            </a>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+  
