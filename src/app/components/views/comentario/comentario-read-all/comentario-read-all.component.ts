@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Comentario } from '../comentario.model';
 import { ComentarioService } from '../comentario.service';
 
@@ -17,7 +17,11 @@ export class ComentarioReadAllComponent implements OnInit {
 
   comentarios: Comentario[] = []; 
 
-  constructor(private service: ComentarioService, private route: ActivatedRoute) { }
+  constructor(
+    private service: ComentarioService, 
+    private route: ActivatedRoute,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.id_chamado = this.route.snapshot.paramMap.get('id_chamado');
@@ -31,5 +35,9 @@ export class ComentarioReadAllComponent implements OnInit {
       console.log(this.comentarios);
     })
 
+  }
+
+  navegarParaCriarComentario(): void {
+    this.router.navigate([`chamados/${this.id_chamado}/comentarios/create`])
   }
 }

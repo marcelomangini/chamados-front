@@ -1,0 +1,24 @@
+<form>
+    <h1>Atualizando um comentário</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Comentário</mat-label>
+        <textarea matInput [(ngModel)]="comentario.comentario" [formControl]="coment" type="text" name="comentario" placeholder="Ex: Comentário sobre o chamado" maxlength="1000"></textarea>
+        <mat-error *ngIf="coment.invalid">{{ getMessage() }}</mat-error>
+    </mat-form-field>    
+    
+    <!-- <mat-form-field class="form">
+        <mat-label>Data de Inclusão</mat-label>
+        <input matInput type="datetime-local" name="dataInclusao" placeholder="Data da inclusão do chamado">
+    </mat-form-field>     
+
+    <mat-form-field class="form">
+        <mat-label>Data de Conclusão</mat-label>
+        <input matInput type="datetime-local" name="dataConclusao" placeholder="Data da conclusão do chamado">
+    </mat-form-field>  -->
+
+    <div class="buttons">
+        <button (click)="cancel()" class="mat-elevation-z8"  mat-stroked-button color="warn">Cancelar</button>
+        <button (click)="update()" [disabled]="getMessage()"  class="mat-elevation-z8"  mat-stroked-button color="primary">Atualizar</button>
+    </div>
+</form>

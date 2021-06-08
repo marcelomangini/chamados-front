@@ -19,7 +19,7 @@ import { ChamadoReadComponent } from './components/views/chamado/chamado-read/ch
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { ChamadoCreateComponent } from './components/views/chamado/chamado-create/chamado-create.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
@@ -27,6 +27,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ChamadoDeleteComponent } from './components/views/chamado/chamado-delete/chamado-delete.component';
 import { ChamadoUpdateComponent } from './components/views/chamado/chamado-update/chamado-update.component';
 import { ComentarioReadAllComponent } from './components/views/comentario/comentario-read-all/comentario-read-all.component';
+import { ComentarioCreateComponent } from './components/views/comentario/comentario-create/comentario-create.component';
+import { ComentarioUpdateComponent } from './components/views/comentario/comentario-update/comentario-update.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ComentarioReadAllComponent } from './components/views/comentario/coment
     ChamadoCreateComponent,
     ChamadoDeleteComponent,
     ChamadoUpdateComponent,
-    ComentarioReadAllComponent
+    ComentarioReadAllComponent,
+    ComentarioCreateComponent,
+    ComentarioUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ import { ComentarioReadAllComponent } from './components/views/comentario/coment
     MatFormFieldModule,
     MatSelectModule,
     MatSnackBarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
