@@ -1,0 +1,33 @@
+<form>
+    <h1>Atualizando chamado</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Título</mat-label>
+        <input matInput [(ngModel)]="chamado.titulo" type="text" name="titulo" placeholder="Ex. Problemas">
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Status</mat-label>
+        <input matInput [(ngModel)]="chamado.status" type="status" name="status" placeholder="Código do status">
+    </mat-form-field> 
+
+    <mat-form-field class="form">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput [(ngModel)]="chamado.descricao" type="text" name="descricao" placeholder="Ex: Texto descrevendo o problema"></textarea>
+    </mat-form-field>    
+    
+    <!-- <mat-form-field class="form">
+        <mat-label>Data de Inclusão</mat-label>
+        <input matInput type="datetime-local" name="dataInclusao" placeholder="Data da inclusão do chamado">
+    </mat-form-field>     
+
+    <mat-form-field class="form">
+        <mat-label>Data de Conclusão</mat-label>
+        <input matInput type="datetime-local" name="dataConclusao" placeholder="Data da conclusão do chamado">
+    </mat-form-field>  -->
+
+    <div class="buttons">
+        <button (click)="cancel()" class="mat-elevation-z8"  mat-stroked-button color="warn">Cancelar</button>
+        <button (click)="update()" class="mat-elevation-z8"  mat-stroked-button color="primary">Atualizar</button>
+    </div>
+</form>

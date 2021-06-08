@@ -33,6 +33,11 @@ export class ChamadoService {
     const url = `${this.baseUrl}/chamados/${id}`;
     return this.http.delete<void>(url);
   }
+  update(chamado: Chamado):Observable<void>{
+    const url = `${this.baseUrl}/chamados/${chamado.id}`;
+    return this.http.put<void>(url,chamado)
+
+  }
 
   mensagem(str: String): void {
     this._snack.open(`${str}`,'OK',{
