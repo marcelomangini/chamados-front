@@ -13,7 +13,7 @@ export class ChamadoDeleteComponent implements OnInit {
   chamado: Chamado = {
     id: '',
     titulo: '',
-    status: '',
+    status: 0,
     descricao: '',
     dataInclusao: null,
     dataConclusao: null

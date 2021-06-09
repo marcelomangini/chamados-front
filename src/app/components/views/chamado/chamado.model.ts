@@ -1,7 +1,7 @@
 export interface Chamado {
     id?: String;
     titulo: String;
-    status: String;
+    status: Number;
     descricao: String;
     dataInclusao: Date;
     dataConclusao: Date;

@@ -30,6 +30,11 @@ import { ComentarioReadAllComponent } from './components/views/comentario/coment
 import { ComentarioCreateComponent } from './components/views/comentario/comentario-create/comentario-create.component';
 import { ComentarioUpdateComponent } from './components/views/comentario/comentario-update/comentario-update.component';
 import { ComentarioDeleteComponent } from './components/views/comentario/comentario-delete/comentario-delete.component';
+// datas
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt);
 
 
 @NgModule({
@@ -68,7 +73,9 @@ import { ComentarioDeleteComponent } from './components/views/comentario/comenta
     ReactiveFormsModule,
   
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: "pt-BR" }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

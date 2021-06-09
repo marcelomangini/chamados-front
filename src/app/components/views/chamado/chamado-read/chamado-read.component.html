@@ -43,14 +43,19 @@
       <!-- dataInclusao Column -->
       <ng-container matColumnDef="dataInclusao">
         <th mat-header-cell *matHeaderCellDef>Data Inclusão</th>
-        <td mat-cell *matCellDef="let row">{{ row.dataInclusao }}</td>
+        <td mat-cell *matCellDef="let row">{{ row.dataInclusao | date:'dd/MM/yyyy HH:mm:ss' }}</td>
       </ng-container>
 
       <!-- dataConclusao Column -->
       <ng-container matColumnDef="dataConclusao">
-        <th mat-header-cell *matHeaderCellDef>Data Conclusão</th>
-        <td mat-cell *matCellDef="let row">{{ row.dataConclusao }}</td>
+        <th mat-header-cell *matHeaderCellDef>Data Inclusão</th>
+        <td mat-cell *matCellDef="let row">{{ row.dataConclusao | date:'dd/MM/yyyy HH:mm:ss' }}</td>
       </ng-container>
+
+    <!--mat-form-field class="form">
+        <mat-label>Data de Inclusão</mat-label>
+        <input matInput type="datetime-local" name="dataInclusao" disabled>
+    </mat-form-field>         
 
       <!-- comentarios Column -->
       <!--ng-container matColumnDef="comentarios">
@@ -69,12 +74,12 @@
         <th mat-header-cell class="mat-header" *matHeaderCellDef>Ações</th>
         <td mat-cell *matCellDef="let row">
           <a class="comentarios" routerLink="{{ row.id }}/comentarios" >
-            <i class="material-icons comentarios">comment</i>           
+            <i class="material-icons comentarios" >comment</i>           
           </a> 
-          <a class="edit" routerLink="update/{{ row.id }}">
+          <a class="edit" *ngIf="!(row.status == 2)" routerLink="update/{{ row.id }}">
             <i class="material-icons">edit</i>
           </a>
-          <a class="delete" routerLink="delete/{{ row.id }}">
+          <a class="delete" *ngIf="!(row.status == 2)" routerLink="delete/{{ row.id }}">
             <i class="material-icons">delete</i>
           </a>
         </td>

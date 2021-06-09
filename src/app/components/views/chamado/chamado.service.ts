@@ -35,11 +35,11 @@ export class ChamadoService {
   }
   update(chamado: Chamado):Observable<void>{
 
-    const data = new Date();
+    /*const data = new Date();
     if (chamado.status == '2') {
       console.log(data.toLocaleDateString());
       chamado.dataConclusao = data;
-    }
+    }*/
 
     const url = `${this.baseUrl}/chamados/${chamado.id}`;
     return this.http.put<void>(url,chamado);
