@@ -2,9 +2,16 @@
   <div class="title">
     <h1>Chamado</h1>
   </div>
-  
-  <button class="mat-elevation-z8" (click)="navegarParaChamadoCreate()" mat-stroked-button color="primary">Novo chamado</button>
-  
+
+  <button
+    class="mat-elevation-z8"
+    (click)="navegarParaChamadoCreate()"
+    mat-stroked-button
+    color="primary"
+  >
+    Novo chamado
+  </button>
+
   <div class="mat-elevation-z8 content-table">
     <table class="table" mat-table [dataSource]="chamados">
       <!-- id Column -->
@@ -21,18 +28,15 @@
 
       <!-- status Column -->
       <ng-container class="status" matColumnDef="status">
-
         <th mat-header-cell *matHeaderCellDef>Status</th>
         <td mat-cell *matCellDef="let row">
-           <mat-select  [(ngModel)]="row.status " name="status"  disabled>
-              <mat-option *ngFor="let item of listStatus" [value]="item.id">
-               {{item.viewValue}}
-              </mat-option>
+          <mat-select [(ngModel)]="row.status" name="status" disabled>
+            <mat-option *ngFor="let item of listStatus" [value]="item.id">
+              {{ item.viewValue }}
+            </mat-option>
           </mat-select>
         </td>
       </ng-container>
-
-      
 
       <!-- descricao Column -->
       <ng-container matColumnDef="descricao">
@@ -42,17 +46,21 @@
 
       <!-- dataInclusao Column -->
       <ng-container matColumnDef="dataInclusao">
-        <th mat-header-cell *matHeaderCellDef>Data Inclusão</th>
-        <td mat-cell *matCellDef="let row">{{ row.dataInclusao | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+        <th mat-header-cell *matHeaderCellDef>Dt Inclusão</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.dataInclusao | date: 'dd/MM/yyyy HH:mm:ss Z' }}
+        </td>
       </ng-container>
 
       <!-- dataConclusao Column -->
       <ng-container matColumnDef="dataConclusao">
-        <th mat-header-cell *matHeaderCellDef>Data Inclusão</th>
-        <td mat-cell *matCellDef="let row">{{ row.dataConclusao | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+        <th mat-header-cell *matHeaderCellDef>Dt Conclusão</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.dataConclusao | date: 'dd/MM/yyyy HH:mm:ss Z' }}
+        </td>
       </ng-container>
 
-    <!--mat-form-field class="form">
+      <!--mat-form-field class="form">
         <mat-label>Data de Inclusão</mat-label>
         <input matInput type="datetime-local" name="dataInclusao" disabled>
     </mat-form-field>         
@@ -67,19 +75,27 @@
           </i>  
         </a> 
         </td>
-      </ng-container-->      
+      </ng-container-->
 
       <!-- acoes Column -->
       <ng-container matColumnDef="acoes">
         <th mat-header-cell class="mat-header" *matHeaderCellDef>Ações</th>
         <td mat-cell *matCellDef="let row">
-          <a class="comentarios" routerLink="{{ row.id }}/comentarios" >
-            <i class="material-icons comentarios" >comment</i>           
-          </a> 
-          <a class="edit" *ngIf="!(row.status == 2)" routerLink="update/{{ row.id }}">
+          <a class="comentarios" routerLink="{{ row.id }}/comentarios">
+            <i class="material-icons comentarios">comment</i>
+          </a>
+          <a
+            class="edit"
+            *ngIf="!(row.status == 2)"
+            routerLink="update/{{ row.id }}"
+          >
             <i class="material-icons">edit</i>
           </a>
-          <a class="delete" *ngIf="!(row.status == 2)" routerLink="delete/{{ row.id }}">
+          <a
+            class="delete"
+            *ngIf="!(row.status == 2)"
+            routerLink="delete/{{ row.id }}"
+          >
             <i class="material-icons">delete</i>
           </a>
         </td>
