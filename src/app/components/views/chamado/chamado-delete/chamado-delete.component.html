@@ -6,10 +6,18 @@
         <input matInput [(ngModel)]="chamado.titulo"  type="text" name="titulo" disabled>
     </mat-form-field>
 
-    <mat-form-field class="form">
+    <!--mat-form-field class="form">
         <mat-label>Status</mat-label>
         <input matInput [(ngModel)]="chamado.status" type="status" name="status" disabled>
-    </mat-form-field> 
+    </mat-form-field--->
+    <mat-form-field class="form">
+        <mat-label>Status</mat-label>
+        <mat-select  [(ngModel)]="chamado.status" name="status" disabled>
+            <mat-option *ngFor="let item of listStatus" [value]="item.id">
+             {{item.value}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>      
 
     <mat-form-field class="form">
         <mat-label>Descrição</mat-label>

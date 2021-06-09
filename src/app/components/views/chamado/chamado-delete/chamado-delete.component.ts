@@ -18,6 +18,11 @@ export class ChamadoDeleteComponent implements OnInit {
     dataInclusao: null,
     dataConclusao: null
   }
+  listStatus = [
+    {id:0,value: 'Aberto'},
+    {id:1,value: 'Execução'},
+    {id:2,value: "Concluído"}
+  ];  
   constructor(private service: ChamadoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {

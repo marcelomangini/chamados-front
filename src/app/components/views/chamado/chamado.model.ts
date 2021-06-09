@@ -3,6 +3,6 @@ export interface Chamado {
     titulo: String;
     status: String;
     descricao: String;
-    dataInclusao: String;
-    dataConclusao: String;
+    dataInclusao: Date;
+    dataConclusao: Date;
 }

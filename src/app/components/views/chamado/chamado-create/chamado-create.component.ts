@@ -17,6 +17,9 @@ export class ChamadoCreateComponent implements OnInit {
     dataInclusao: null,
     dataConclusao: null
   }
+
+  listStatus = ['Em aberto', 'Em andamento', 'Concluido'];
+
   constructor(private service: ChamadoService, private router: Router) { }
 
   ngOnInit(): void {

@@ -17,6 +17,12 @@ export class ChamadoUpdateComponent implements OnInit {
     dataInclusao: null,
     dataConclusao: null
   }
+
+  listStatus = [
+    {id:0,value: 'Em aberto'},
+    {id:1,value: 'Em tratativa'},
+    {id:2,value: "Concluído"}
+  ];
   
   constructor(private service: ChamadoService, private route: ActivatedRoute, private router: Router) { }
 
@@ -37,6 +43,15 @@ export class ChamadoUpdateComponent implements OnInit {
     })
   }
   update(): void {
+
+    // se o chamado tiver status concluido, grava data da conclusão
+    /*const data = new Date();
+    if (this.chamado.status == '2') {
+      console.log(data.toLocaleDateString());
+      this.chamado.dataConclusao = data;
+    }*/
+
+    console.log(`chamado para atualizar: ${this.chamado}`);
     this.service.update(this.chamado).subscribe((resposta)=>{
       this.router.navigate(['chamados']);
       this.service.mensagem('Chamado atualizado com sucesso');

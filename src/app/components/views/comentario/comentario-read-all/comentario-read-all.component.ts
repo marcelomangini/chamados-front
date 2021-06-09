@@ -11,7 +11,7 @@ import { ComentarioService } from '../comentario.service';
 export class ComentarioReadAllComponent implements OnInit {
 
   
-  displayedColumns: string[] = ['id', 'comentario', 'dataComentario', 'comentarios','acoes'];
+  displayedColumns: string[] = ['id', 'comentario', 'dataComentario', 'acoes'];
 
   id_chamado: String = '';
 

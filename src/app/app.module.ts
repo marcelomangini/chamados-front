@@ -31,6 +31,7 @@ import { ComentarioCreateComponent } from './components/views/comentario/comenta
 import { ComentarioUpdateComponent } from './components/views/comentario/comentario-update/comentario-update.component';
 import { ComentarioDeleteComponent } from './components/views/comentario/comentario-delete/comentario-delete.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +66,7 @@ import { ComentarioDeleteComponent } from './components/views/comentario/comenta
     MatSelectModule,
     MatSnackBarModule,
     ReactiveFormsModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
