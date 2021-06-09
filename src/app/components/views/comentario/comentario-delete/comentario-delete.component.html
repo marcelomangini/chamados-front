@@ -1,10 +1,9 @@
 <form>
-    <h1>Atualizando um comentário</h1>
+    <h1>Deletando comentário</h1>
 
     <mat-form-field class="form">
         <mat-label>Comentário</mat-label>
-        <textarea matInput [(ngModel)]="comentario.comentario" [formControl]="coment" required type="text" name="comentario" placeholder="Ex: Comentário sobre o chamado" maxlength="1000"></textarea>
-        <mat-error *ngIf="coment.invalid">{{ getMessage() }}</mat-error>
+        <textarea matInput [(ngModel)]="comentario.comentario" type="text" name="comentario" disabled></textarea>
     </mat-form-field>    
     
     <!-- <mat-form-field class="form">
@@ -19,6 +18,6 @@
 
     <div class="buttons">
         <button (click)="cancel()" class="mat-elevation-z8"  mat-stroked-button color="warn">Cancelar</button>
-        <button (click)="update()" [disabled]="getMessage()"  class="mat-elevation-z8"  mat-stroked-button color="primary">Atualizar</button>
+        <button (click)="delete()" class="mat-elevation-z8"  mat-stroked-button color="primary">Deletar</button>
     </div>
 </form>

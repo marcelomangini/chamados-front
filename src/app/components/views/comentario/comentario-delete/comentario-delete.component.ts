@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Comentario } from '../comentario.model';
 import { ComentarioService } from '../comentario.service';
 
 @Component({
-  selector: 'app-comentario-update',
-  templateUrl: './comentario-update.component.html',
-  styleUrls: ['./comentario-update.component.css']
+  selector: 'app-comentario-delete',
+  templateUrl: './comentario-delete.component.html',
+  styleUrls: ['./comentario-delete.component.css']
 })
-export class ComentarioUpdateComponent implements OnInit {
-  
+export class ComentarioDeleteComponent implements OnInit {
+
   id_chamado: String = '';
 
   comentario: Comentario = {
@@ -18,8 +17,6 @@ export class ComentarioUpdateComponent implements OnInit {
     comentario: '',
     dataComentario: null
   }
-
-  coment = new FormControl('',[Validators.minLength(3)])
 
   constructor(
     private service: ComentarioService,
@@ -31,7 +28,7 @@ export class ComentarioUpdateComponent implements OnInit {
     this.id_chamado = this.route.snapshot.paramMap.get('id_chamado');
     this.comentario.id = this.route.snapshot.paramMap.get('id');
     this.findById();
-    //this.getMessage();
+    
   }
 
   cancel(): void {
@@ -44,20 +41,14 @@ export class ComentarioUpdateComponent implements OnInit {
     })
   }
 
-  update(): void {
-    this.service.update(this.comentario).subscribe((resposta)=>{
+  delete():void{
+    this.service.delete(this.comentario.id).subscribe(()=>{
       this.router.navigate([`chamados/${this.id_chamado}/comentarios`]);
-      this.service.mensagem('Comentário atualizado com sucesso!')
-    }, err =>{
+      this.service.mensagem('Comentário deletado com sucesso')
+    }, err => {
       this.router.navigate([`chamados/${this.id_chamado}/comentarios`]);
-      this.service.mensagem('Falha ao atualizar comentário! Tente mais tarde.')     
+      this.service.mensagem('Falha ao deletar comentário! Tente mais tarde.')
     })
   }
-
-  getMessage() {
-    if(this.coment.invalid) {
-      return 'O campo comentário deve conter no mínimo 3 caracteres.'
-    }
-    return false;
-  }
 }
+

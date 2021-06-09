@@ -29,6 +29,7 @@ import { ChamadoUpdateComponent } from './components/views/chamado/chamado-updat
 import { ComentarioReadAllComponent } from './components/views/comentario/comentario-read-all/comentario-read-all.component';
 import { ComentarioCreateComponent } from './components/views/comentario/comentario-create/comentario-create.component';
 import { ComentarioUpdateComponent } from './components/views/comentario/comentario-update/comentario-update.component';
+import { ComentarioDeleteComponent } from './components/views/comentario/comentario-delete/comentario-delete.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ComentarioUpdateComponent } from './components/views/comentario/comenta
     ChamadoUpdateComponent,
     ComentarioReadAllComponent,
     ComentarioCreateComponent,
-    ComentarioUpdateComponent
+    ComentarioUpdateComponent,
+    ComentarioDeleteComponent
   ],
   imports: [
     BrowserModule,
